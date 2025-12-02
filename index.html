@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Music Website — Minimal Glass Player</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-white">
+
+  <video id="bgVideo" autoplay loop muted playsinline>
+    <source src="video/vid1.mp4" type="video/mp4">
+  </video>
+  <div id="videoOverlay"></div>
+
+  <header id="siteHeader" class="w-full p-4 mt-6">
+    <div class="max-w-2xl mx-auto flex items-center">
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-pink-500 rounded-md flex items-center justify-center font-bold">E</div>
+        <div class="text-lg font-semibold">EJ MUSIC WEB</div>
+      </div>
+    </div>
+  </header>
+
+  <main id="playlist" class="max-w-2xl mx-auto px-4 py-10 space-y-4">
+
+    <article class="song rounded-lg p-3 cursor-pointer flex items-center gap-3"
+      data-title="Better"
+      data-singer="Khalid"
+      data-img="img/img1.jpg"
+      data-video="video/vid1.mp4"
+      data-audio="songs/better.mp3"
+      data-lyrics='[
+    {"time":19,"line":"I love to see you shine in the night","duration":2},
+    {"time":22,"line":"Like the diamond you are","duration":2},
+    {"time":29,"line":"Im good on the side, its alright","duration":2},
+    {"time":32,"line":"Just hold me in the dark","duration":2},
+    {"time":39,"line":"No ones gotta know what we do","duration":2},
+    {"time":42,"line":"Hit me up when youre bored","duration":2},
+    {"time":48,"line":"Cause I live down the street, so we meet","duration":2},
+    {"time":52,"line":"When you need it, its yours","duration":2},
+    {"time":55,"line":"All I hear is...","duration":2},
+    {"time":57,"line":"Nothing feels better than this","duration":2},
+    {"time":59,"line":"Nothing feels better","duration":2},
+    {"time":62,"line":"Nothing feels better than this","duration":2},
+    {"time":64,"line":"Nothing feels better, oh, nah","duration":2},
+    {"time":68,"line":"We dont gotta hide","duration":2},
+    {"time":71,"line":"This is what you like, I admit","duration":2},
+    {"time":76,"line":"Nothing feels better than this","duration":2},
+    {"time":78,"line":"You say were just friends, but I swear","duration":2},
+    {"time":81,"line":"When nobodys around","duration":2},
+    {"time":86,"line":"You keep my hand around your neck, we connect","duration":2},
+    {"time":91,"line":"Are you feeling it now?","duration":2},
+    {"time":94,"line":"Cause I am","duration":2},
+    {"time":97,"line":"I got so high the other night, I swear to God","duration":2},
+    {"time":100,"line":"Felt my feet lift the ground","duration":2},
+    {"time":105,"line":"Ooh, yeah","duration":2},
+    {"time":107,"line":"Your back against the wall, this is all youve been talkin about","duration":2},
+    {"time":113,"line":"In my ears","duration":2},
+    {"time":115,"line":"Nothing feels better than this","duration":2},
+    {"time":118,"line":"Nothing feels better","duration":2},
+    {"time":120,"line":"Nothing feels better than this","duration":2},
+    {"time":122,"line":"Nothing feels better, oh, nah","duration":2},
+    {"time":127,"line":"We dont gotta hide","duration":2},
+    {"time":130,"line":"This is what you like, I admit","duration":2},
+    {"time":135,"line":"Nothing feels better than this","duration":2},
+    {"time":136,"line":"Now, left, right, left, right","duration":2},
+    {"time":140,"line":"Take it back, bring it side to side","duration":2},
+    {"time":144,"line":"Like that, like that, ayy","duration":2},
+    {"time":146,"line":"Ooh, now, left, right, left, right","duration":2},
+    {"time":150,"line":"Take it back, bring it side to side","duration":2},
+    {"time":153,"line":"Like–","duration":2},
+    {"time":154,"line":"Nothing feels better than this","duration":2},
+    {"time":157,"line":"Nothing feels better","duration":2},
+    {"time":159,"line":"Nothing feels better than this","duration":2},
+    {"time":162,"line":"Nothing feels better, oh, nah","duration":2},
+    {"time":166,"line":"We dont gotta hide","duration":2},
+    {"time":169,"line":"This is what you like, I admit","duration":2},
+    {"time":174,"line":"Nothing feels better than this","duration":2},
+    {"time":180,"line":"Better than this","duration":2},
+    {"time":194,"line":"Nothing feels better than this oh yeah","duration":2}
+  ]'>
+      <img src="img/img1.jpg" class="w-14 h-14 rounded-md object-cover shadow-md">
+      <div>
+        <div class="text-base font-semibold">Better</div>
+        <div class="text-xs opacity-70 mt-1">Khalid</div>
+      </div>
+    </article>
+
+    <article class="song rounded-lg p-3 cursor-pointer flex items-center gap-4"
+      data-title="Saturday Nights"
+      data-singer="Khalid ft. Kane Brown"
+      data-img="img/img2.jpg"
+      data-video="video/vid2.mp4"
+      data-audio="songs/saturday_nights.mp3"
+      data-lyrics='[
+  {"time":11,"line":"Saturday nights, blueberry cigarillos","duration":3},
+  {"time":15,"line":"Swishers make my throat hurt","duration":2},
+  {"time":17,"line":"Rolling OCBs on the side for me","duration":3},
+  {"time":20,"line":"Light em up and let em both burn","duration":3},
+  {"time":23,"line":"Family feuds, say your moms confused","duration":3},
+  {"time":27,"line":"Off of shit she doesnt wanna learn","duration":3},
+  {"time":28,"line":"But daddys gone, say hes never home","duration":3},
+  {"time":31,"line":"And wishing only makes it worse","duration":3},
+
+  {"time":34,"line":"I guess theres certain dreams that you gotta keep","duration":3},
+  {"time":39,"line":"Cause theyll only know what you let em see","duration":3},
+
+  {"time":45,"line":"All the things that I know that your parents dont","duration":3},
+  {"time":50,"line":"They dont care like I do, nowhere like I do","duration":3},
+  {"time":56,"line":"And all the things that I know that your parents dont","duration":3},
+  {"time":61,"line":"They dont care like I do, nowhere like I do","duration":3},
+  {"time":65,"line":"Nowhere like I do","duration":2},
+  {"time":67,"line":"Nowhere like I do","duration":2},
+
+  {"time":79,"line":"Saturday nights, your works shoes are stilettos","duration":3},
+  {"time":83,"line":"Smell of cheap perfume","duration":2},
+  {"time":86,"line":"Makeup on your face, try to hide the pain","duration":3},
+  {"time":89,"line":"All the lies, they look like the truth","duration":3},
+  {"time":90,"line":"Deep in your heart, all you want is love","duration":3},
+  {"time":94,"line":"But you never felt good enough","duration":3},
+  {"time":97,"line":"You got wrapped up in other plans","duration":3},
+  {"time":100,"line":"But this aint the way the story ends","duration":3},
+
+  {"time":102,"line":"I guess theres certain dreams that you gotta keep","duration":3},
+  {"time":108,"line":"Cause theyll only know what you let em see","duration":3},
+
+  {"time":113,"line":"All the things that I know that your parents dont","duration":3},
+  {"time":118,"line":"They dont care like I do, nowhere like I do","duration":3},
+  {"time":124,"line":"And all the things that I know that your parents dont","duration":3},
+  {"time":129,"line":"They dont care like I do, nowhere like I do","duration":3},
+  {"time":133,"line":"Nowhere like I do","duration":2},
+
+  {"time":138,"line":"(Do-do-do, do-do-do, ah)","duration":2},
+  {"time":139,"line":"Cause I care (I care), I care about you","duration":3},
+  {"time":143,"line":"(Do-do-do, do-do-do, ah)","duration":2},
+  {"time":145,"line":"Theres nowhere Id rather be than right here around you","duration":3},
+  {"time":149,"line":"(Do-do-do, do-do-do, ah)","duration":2},
+  {"time":151,"line":"I care (I care), care about you (Care about you)","duration":3},
+  {"time":155,"line":"(Do-do-do, do-do-do, ah)","duration":2},
+  {"time":156,"line":"Theres nowhere Id rather be","duration":3},
+
+  {"time":159,"line":"With all the things that I know that your parents dont","duration":3},
+  {"time":164,"line":"They dont care about you the way that I do, oh","duration":3},
+  {"time":170,"line":"All the things that I know that your parents dont","duration":3},
+  {"time":176,"line":"Dont care about you the way that I, the way that I do","duration":3}
+]'>
+
+
+      <img src="img/img2.jpg" class="w-16 h-16 rounded-md object-cover">
+      <div>
+        <div class="text-base font-semibold">Saturday Nights</div>
+        <div class="text-xs opacity-70 mt-1">Khalid ft. Kane Brown</div>
+      </div>
+    </article>
+
+    <article class="song rounded-lg p-3 cursor-pointer flex items-center gap-4"
+      data-title="Pahina"
+      data-singer="Cup of Joe"
+      data-img="img/img3.jpg"
+      data-video="video/vid3.mp4"
+      data-audio="songs/pahina.mp3"
+      data-lyrics='[
+  {"time":9,"line":"Di na makausad di malinawan","duration":3},
+  {"time":18,"line":"Di na mabura ang iyong mga larawan","duration":3},
+  {"time":27,"line":"Di alam kung san tutungo ang mga hakbang patalikod naghihingalo","duration":4},
+  {"time":35,"line":"Ang lapis na ginamit sa kuwento nating naudlot","duration":3},
+  {"time":45,"line":"Bawat buklat ng aklat binabalikan","duration":3},
+  {"time":53,"line":"Mga liham na ang laman ligayang dala","duration":3},
+  {"time":59,"line":"Ikaw lang ang may akda","duration":2},
+  {"time":62,"line":"Sa lahat ng pahinang sinulat ng tadhanay","duration":3},
+  {"time":67,"line":"Ikaw at ikaw at ikaw pa rin","duration":3},
+  {"time":72,"line":"Ang yugtong paulit-ulit kong babalik-balikan","duration":3},
+  {"time":76,"line":"Sigaw ay sigaw ay ikaw pa rin","duration":3},
+  {"time":81,"line":"Patuloy kong panghahawakan ang yong mga salitang","duration":3},
+  {"time":85,"line":"Hindi na nakikita sa tingin ng yong mga mata","duration":3},
+  {"time":90,"line":"Ngunit kung sarado na ang puso sa nadarama","duration":3},
+  {"time":94,"line":"Puwede bang isipin mo kung bakit tayo nagsimula","duration":3},
+  {"time":104,"line":"Ating katotohanay","duration":2},
+  {"time":107,"line":"Naging isang nobelang","duration":2},
+  {"time":112,"line":"Winakasan ng pagdududang","duration":2},
+  {"time":115,"line":"Di na nalabanan","duration":2},
+  {"time":121,"line":"Nais na maramdaman muli","duration":2},
+  {"time":124,"line":"Kung pano isulat ang pangalan mo","duration":3},
+  {"time":130,"line":"Ngunit bawat letray mahirap nang iguhit","duration":3},
+  {"time":137,"line":"Dahil binubuo nila ang yong mga pangako","duration":3},
+  {"time":139,"line":"Sa lahat ng pahinang sinulat ng tadhanay","duration":3},
+  {"time":143,"line":"Ikaw at ikaw at ikaw pa rin","duration":3},
+  {"time":148,"line":"Ang yugtong paulit-ulit kong babalik-balikan","duration":3},
+  {"time":152,"line":"Sigaw ay sigaw ay ikaw pa rin","duration":3},
+  {"time":156,"line":"Simula sa wakas na di matuklasan","duration":3},
+  {"time":161,"line":"Pabalik kung saan di na natagpuan","duration":3},
+  {"time":166,"line":"Ang mga matang nakatanaw sa umpisa","duration":3},
+  {"time":170,"line":"Ng yugtong di na sana naisulat pa","duration":3},
+  {"time":174,"line":"Simula sa wakas na di matuklasan","duration":3},
+  {"time":179,"line":"Pabalik kung saan di na natagpuan","duration":3},
+  {"time":184,"line":"Ang mga matang nakatanaw sa umpisa","duration":3},
+  {"time":188,"line":"Ng yugtong di na sana naisulat pa","duration":3},
+  {"time":193,"line":"Sa lahat ng pahinang sinulat ng tadhanay","duration":3},
+  {"time":198,"line":"Ikaw at ikaw at ikaw pa rin","duration":3},
+  {"time":202,"line":"Ang yugtong paulit-ulit kong babalik-balikan","duration":3},
+  {"time":207,"line":"Sigaw ay sigaw ay ikaw pa rin","duration":3},
+  {"time":211,"line":"Patuloy kong panghahawakan ang yong mga salitang","duration":3},
+  {"time":216,"line":"Hindi na nakikita sa tingin ng yong mga mata","duration":3},
+  {"time":220,"line":"Ngunit kung sarado na ang puso sa nadarama","duration":3},
+  {"time":225,"line":"Pwede bang isipin mo kung bakit tayo nagsimula","duration":3},
+  {"time":230,"line":"Simula sa wakas na di matuklasan","duration":3},
+  {"time":233,"line":"Pabalik kung saan di na natagpuan (ikaw at ikaw at ikaw pa rin)","duration":4},
+  {"time":238,"line":"Ang mga matang nakatanaw sa umpisa (sigaw ay sigaw ay)","duration":3},
+  {"time":240,"line":"Ng yugtong di na sana naisulat pa","duration":3}
+]' >
+
+
+
+      <img src="img/img3.jpg" class="w-16 h-16 rounded-md object-cover">
+      <div>
+        <div class="text-base font-semibold">Pahina</div>
+        <div class="text-xs opacity-70 mt-1">Cup Of Joe</div>
+      </div>
+    </article>
+
+    <article class="song rounded-lg p-3 cursor-pointer flex items-center gap-4"
+      data-title="Swim"
+      data-singer="Chase Atlantic"
+      data-img="img/img4.jpg"
+      data-video="video/vid4.mp4"
+      data-audio="songs/swim.mp3"
+      data-lyrics='[
+  {"time":9,"line":"I bet you feel it now, baby","duration":3},
+  {"time":13,"line":"Especially since weve only known each other one day","duration":3},
+  {"time":17,"line":"But, Ive gotta work shit out, baby","duration":3},
+  {"time":20,"line":"Im exercising demons, got em runnin round the block now","duration":3},
+  {"time":25,"line":"Location drop, now","duration":2},
+  {"time":27,"line":"Pedal to the floor like youre runnin from the cops now","duration":3},
+  {"time":31,"line":"Oh, what a cop out","duration":2},
+  {"time":35,"line":"You picked a dance with the devil and you lucked out","duration":3},
+  {"time":39,"line":"Yeah","duration":1},
+  {"time":40,"line":"The waters getting colder, let me in your ocean, swim","duration":3},
+  {"time":45,"line":"Out in California, Ill be forward stroking, swim","duration":3},
+  {"time":49,"line":"So hard to ignore ya, specially when Im smoking, swim","duration":3},
+  {"time":53,"line":"World is on my shoulders, keep your body open, swim","duration":3},
+  {"time":57,"line":"Im swimming, Im swimming, Im swimming, yeah","duration":3},
+  {"time":61,"line":"Im swimming, Im swimming, Im swimming, yeah","duration":3},
+  {"time":65,"line":"Out in California, Ill be forward stroking, swim","duration":3},
+  {"time":69,"line":"So hard to ignore ya, keep your body open, swim","duration":3},
+  {"time":80,"line":"Pop a couple pills in the daytime","duration":3},
+  {"time":83,"line":"Heard you got a friend, whats her head like?","duration":3},
+  {"time":84,"line":"Probably shouldve fucked on the first night","duration":3},
+  {"time":86,"line":"Now I gotta wait for the green light","duration":3},
+  {"time":88,"line":"I dont wanna wait for no green light","duration":3},
+  {"time":90,"line":"Narcolepsy got me feeling stage fright","duration":3},
+  {"time":92,"line":"Luckily I float at insane heights","duration":3},
+  {"time":94,"line":"Luckily, luckily, luckily, yeah","duration":3},
+  {"time":97,"line":"Location drop, now","duration":2},
+  {"time":99,"line":"Pedal to the floor like youre runnin from the cops now","duration":3},
+  {"time":103,"line":"Oh, what a cop out","duration":2},
+  {"time":107,"line":"You picked a dance with the devil and you lucked out","duration":3},
+  {"time":111,"line":"Yeah","duration":1},
+  {"time":113,"line":"The waters getting colder, let me in your ocean, swim","duration":3},
+  {"time":117,"line":"Out in California, Ill be forward stroking, swim","duration":3},
+  {"time":121,"line":"So hard to ignore ya, specially when Im smoking, swim","duration":3},
+  {"time":125,"line":"World is on my shoulders, keep your body open, swim","duration":3},
+  {"time":129,"line":"Im swimming, Im swimming, Im swimming, yeah","duration":3},
+  {"time":133,"line":"Im swimming, Im swimming, Im swimming, yeah","duration":3},
+  {"time":137,"line":"Out in California, Ill be forward stroking, swim","duration":3},
+  {"time":141,"line":"So hard to ignore ya, keep your body open, swim","duration":3},
+  {"time":147,"line":"Swim, push the water to the edge and watch it drip","duration":3},
+  {"time":152,"line":"Check your footing, dont get caught up in the rip, no","duration":3},
+  {"time":156,"line":"I know I said Id call, I never did, no","duration":3},
+  {"time":162,"line":"(Swim) swim, swim now","duration":3},
+  {"time":164,"line":"I can take you, even though Ive never been there","duration":3},
+  {"time":168,"line":"The tide has currently been thrashing around me again and again now","duration":3},
+  {"time":172,"line":"Ive been drowning for a minute, your body keeps pulling me in, girl","duration":3},
+  {"time":177,"line":"The waters getting colder, let me in your ocean, swim","duration":3},
+  {"time":181,"line":"Out in California, Ill be forward stroking, swim","duration":3},
+  {"time":185,"line":"So hard to ignore ya, specially when Im smoking, swim","duration":3},
+  {"time":189,"line":"World is on my shoulders, keep your body open, swim","duration":3},
+  {"time":193,"line":"Im swimming, Im swimming, Im swimming, yeah","duration":3},
+  {"time":197,"line":"Im swimming, Im swimming, Im swimming, yeah","duration":3},
+  {"time":200,"line":"Out in California, Ill be forward stroking, swim","duration":3},
+  {"time":205,"line":"So hard to ignore ya, keep your body open, swim","duration":3}
+]'>
+
+
+
+      <img src="img/img4.jpg" class="w-16 h-16 rounded-md object-cover">
+      <div>
+        <div class="text-base font-semibold">Swim</div>
+        <div class="text-xs opacity-70 mt-1">Chase Atlantic</div>
+      </div>
+    </article>
+
+    <article class="song rounded-lg p-3 cursor-pointer flex items-center gap-4"
+      data-title="After Hours"
+      data-singer="The Weeknd"
+      data-img="img/img5.jpg"
+      data-video="video/vid5.mp4"
+      data-audio="songs/after_hours.mp3"
+      data-lyrics='[
+    {"time":0,"line":"Thought I almost died in my dream again (Baby, almost died)","duration":5},
+    {"time":5,"line":"Fightin for my life, I couldnt breathe again","duration":4},
+    {"time":9,"line":"Im fallin in too deep (Oh, oh)","duration":3},
+    {"time":12,"line":"Without you, I cant sleep (Fallin in)","duration":3},
+    {"time":15,"line":"Cause my heart belongs to you","duration":3},
+    {"time":18,"line":"Ill risk it all for you","duration":2},
+    {"time":20,"line":"I want you next to me","duration":3},
+    {"time":23,"line":"This time, Ill never leave","duration":3},
+    {"time":26,"line":"I wanna share babies","duration":2},
+    {"time":28,"line":"Protection, we wont need","duration":2},
+    {"time":30,"line":"Your body next to me","duration":3},
+    {"time":33,"line":"Is just a memory","duration":2},
+    {"time":35,"line":"Im fallin in too deep, oh","duration":3},
+    {"time":38,"line":"Without you, I cant sleep","duration":3},
+    {"time":41,"line":"Insomnia relieve, oh","duration":3},
+    {"time":44,"line":"Talk to me, without you, I cant breathe","duration":4},
+    {"time":48,"line":"My darkest hours","duration":2},
+    {"time":50,"line":"Girl, I felt so alone inside of this crowded room","duration":4},
+    {"time":54,"line":"Different girls on the floor, distractin my thoughts of you","duration":4},
+    {"time":58,"line":"I turned into the man I used to be, to be","duration":4},
+    {"time":62,"line":"Put myself to sleep","duration":2},
+    {"time":64,"line":"Just so I can get closer to you inside my dreams","duration":4},
+    {"time":68,"line":"Didnt wanna wake up less you were beside me","duration":4},
+    {"time":72,"line":"I just wanted to call you and say, and say","duration":4},
+    {"time":76,"line":"Oh, baby","duration":2},
+    {"time":78,"line":"Where are you now when I need you most?","duration":4},
+    {"time":82,"line":"Id give it all just to hold you close","duration":4},
+    {"time":86,"line":"Sorry that I broke your heart, your heart","duration":4},
+    {"time":90,"line":"Never comin down, uh","duration":2},
+    {"time":92,"line":"I was running away from facin reality, uh","duration":4},
+    {"time":96,"line":"Wastin all of my time out living my fantasies","duration":4},
+    {"time":100,"line":"Spendin money to compensate, compensate","duration":3},
+    {"time":103,"line":"Cause I want you, baby, uh","duration":3},
+    {"time":106,"line":"I be livin in heaven when Im inside of you","duration":4},
+    {"time":110,"line":"It was simply a blessing wakin beside you","duration":4},
+    {"time":114,"line":"Ill never let you down again, again","duration":4},
+    {"time":118,"line":"Oh, baby","duration":2},
+    {"time":120,"line":"Where are you now when I need you most?","duration":4},
+    {"time":124,"line":"Id give it all just to hold you close","duration":4},
+    {"time":128,"line":"Sorry that I broke your heart, your heart","duration":4},
+    {"time":132,"line":"I said, baby","duration":2},
+    {"time":134,"line":"Ill treat you better than I did before","duration":4},
+    {"time":138,"line":"Ill hold you down and not let you go","duration":4},
+    {"time":142,"line":"This time, I wont break your heart, your heart, yeah","duration":4},
+    {"time":146,"line":"I know its all my fault","duration":3},
+    {"time":149,"line":"Made you put down your guard","duration":3},
+    {"time":152,"line":"I know I made you fall","duration":3},
+    {"time":155,"line":"Then said you were wrong for me","duration":3},
+    {"time":158,"line":"I lied to you, I lied to you, I lied to you (To you)","duration":4},
+    {"time":162,"line":"Cant hide the truth, Id stay with her in spite of you","duration":4},
+    {"time":166,"line":"You did some things that you regret, still ride for you","duration":4},
+    {"time":170,"line":"Cause this house is not a home","duration":3},
+    {"time":173,"line":"Without my baby","duration":2},
+    {"time":175,"line":"Where are you now when I need you most?","duration":4},
+    {"time":179,"line":"I gave it all just to hold you close","duration":4},
+    {"time":183,"line":"Sorry that I broke your heart, your heart","duration":4},
+    {"time":187,"line":"And I said, baby","duration":2},
+    {"time":189,"line":"Ill treat you better than I did before","duration":4},
+    {"time":193,"line":"Ill hold you down and not let you go","duration":4},
+    {"time":197,"line":"This time, I wont break your heart, your heart, no","duration":4}
+]'>
+
+
+      <img src="img/img5.jpg" class="w-16 h-16 rounded-md object-cover">
+      <div>
+        <div class="text-base font-semibold">After Hours</div>
+        <div class="text-xs opacity-70 mt-1">The Weeknd</div>
+      </div>
+    </article>
+
+    <article class="song rounded-lg p-3 cursor-pointer flex items-center gap-4"
+      data-title="The Way Life Goes"
+      data-singer="Lil Uzi Vert"
+      data-img="img/img6.jpg"
+      data-video="video/vid6.mp4"
+      data-audio="songs/the_way_life_goes.mp3"
+      data-lyrics='[
+    {"time":1,"line":"Thats true (thats true)","duration":0},
+    {"time":2,"line":"Thats right (that right, that right)","duration":0},
+    {"time":3,"line":"Shes sipping Moët, and yeah, I swear it gets her wetter","duration":1},
+    {"time":6,"line":"My Louboutins new, so my bottoms, they is redder","duration":1},
+    {"time":8,"line":"No, Im not a rat, but Im all about my cheddar","duration":3},
+    {"time":11,"line":"Just talked to your homie she said we should be together","duration":2},
+    {"time":14,"line":"Gave me brain, was so insane that I made her my header","duration":2},
+    {"time":17,"line":"If she ever call my phone you know I gotta dead her","duration":2},
+    {"time":20,"line":"But I like that girl too much, I wish I never met her","duration":2},
+    {"time":23,"line":"Hello","duration":1},
+    {"time":29,"line":"I was listening to this song","duration":2},
+    {"time":33,"line":"It go like","duration":1},
+    {"time":35,"line":"I know it hurts sometimes, but youll get over it (yeah)","duration":2},
+    {"time":40,"line":"Youll find another life to live (yeah)","duration":3},
+    {"time":43,"line":"I swear that youll get over it","duration":2},
+    {"time":46,"line":"I know youre sad and tired","duration":2},
+    {"time":48,"line":"Youve got nothing left to give (yeah)","duration":3},
+    {"time":51,"line":"Youll find another life to live (yeah)","duration":3},
+    {"time":55,"line":"I know that youll get over it (yeah)","duration":3},
+    {"time":58,"line":"Wish I never, ever, ever told you things","duration":3},
+    {"time":61,"line":"I was only, only trying to show you things (yeah)","duration":2},
+    {"time":64,"line":"Iced out heart on your neck tried to froze your ring","duration":2},
+    {"time":67,"line":"I had to get a me a new bitch to hold the pain","duration":2},
+    {"time":70,"line":"We was in Hawaii looking at the ring (damn, yeah)","duration":2},
+    {"time":75,"line":"She smiling happy, but Im laughing cause her new man a lame","duration":2},
+    {"time":78,"line":"(Broke boy, broke boy, broke boy, broke boy)","duration":2},
+    {"time":81,"line":"Damn, that just goes to show me money dont attract a thing (real shit)","duration":2},
+    {"time":87,"line":"Stuck to the plan even though you used to go with my mans (yeah)","duration":2},
+    {"time":93,"line":"I know it hurts sometimes, but youll get over it (yeah)","duration":2},
+    {"time":99,"line":"Youll find another life to live","duration":2},
+    {"time":101,"line":"I swear that youll get over it","duration":2},
+    {"time":105,"line":"And I know youre sad and tired","duration":2},
+    {"time":108,"line":"Youve got nothing left to give (yeah)","duration":2},
+    {"time":110,"line":"Youll find another life to live","duration":2},
+    {"time":113,"line":"I know that youll get over it","duration":2},
+    {"time":116,"line":"See, I tied up my RAF you strapped up your Rick","duration":3},
+    {"time":120,"line":"Diamonds on your neck, ice all on my wrist","duration":3},
+    {"time":123,"line":"Complement my style","duration":2},
+    {"time":125,"line":"She dont want me, Im running wild","duration":2},
+    {"time":128,"line":"You know I respect her on that level","duration":2},
+    {"time":130,"line":"She dont want me, then Ima let her (bye)","duration":2},
+    {"time":132,"line":"Go over there with that broke fella (go over)","duration":2},
+    {"time":134,"line":"Walk off my Saint Laurent, that leather, ooh","duration":2},
+    {"time":136,"line":"My new chick, I swear that she better, ooh","duration":2},
+    {"time":138,"line":"Want me back, never, ooh (ooh)","duration":2},
+    {"time":141,"line":"Thats true (thats true)","duration":3},
+    {"time":142,"line":"Thats right (thats right, that right)","duration":1},
+    {"time":143,"line":"Shes sipping Moët, and yeah, I swear it gets her wetter","duration":2},
+    {"time":146,"line":"My Louboutins new, so my bottoms, they is redder","duration":2},
+    {"time":149,"line":"No, Im not a rat, but Im all about my cheddar","duration":2},
+    {"time":152,"line":"Just talked to your homie, she said we should be together","duration":2},
+    {"time":154,"line":"Gave me brain, was so insane that I made her my header","duration":2},
+    {"time":157,"line":"If she ever call my phone you know I gotta dead her","duration":2},
+    {"time":161,"line":"But I like that girl too much, I wish I never met her","duration":2},
+    {"time":164,"line":"I know it hurts sometimes, but youll get over it (but why?)","duration":3},
+    {"time":169,"line":"Youll find another life to live (youll find)","duration":4},
+    {"time":172,"line":"I swear that youll get over it (youll get over it)","duration":3},
+    {"time":175,"line":"I know it hurts sometimes, but youll get over it (no, no)","duration":3},
+    {"time":180,"line":"Youll find another life to live (you will)","duration":3},
+    {"time":183,"line":"I know that youll get over it (oh)","duration":2},
+    {"time":188,"line":"Thats true, thats right","duration":2},
+    {"time":190,"line":"Shes sipping Moët, and yeah, I swear it gets her wetter","duration":2},
+    {"time":193,"line":"My Louboutins new, so my bottoms, they is redder","duration":3},
+    {"time":196,"line":"No, Im not a rat, but Im all about my cheddar","duration":3},
+    {"time":199,"line":"Just talked to your homie, she said we should be together","duration":2},
+    {"time":202,"line":"Gave me brain, was so insane that I made her my header","duration":2},
+    {"time":205,"line":"If she ever call my phone you know I gotta dead her","duration":2},
+    {"time":207,"line":"But I like that girl too much, I wish I never met her","duration":2}
+]'>
+
+      <img src="img/img6.jpg" class="w-16 h-16 rounded-md object-cover">
+      <div>
+        <div class="text-base font-semibold">The Way Life Goes</div>
+        <div class="text-xs opacity-70 mt-1">Lil Uzi Vert</div>
+      </div>
+    </article>
+
+    <!-- Add more songs here -->
+
+  </main>
+
+  <!-- Lyrics Modal -->
+<div id="modal" class="fixed inset-0 hidden z-50 flex items-center justify-center">
+
+  <!-- REMOVED DARK OVERLAY (DOESN'T DARKEN BACKGROUND ANYMORE) -->
+
+  <div id="modalContent" class="modal-slide rounded-xl shadow-xl max-w-sm w-[88%] p-4 pb-6 relative 
+      bg-white/10 backdrop-blur-xl border border-white/20 min-h-[400px]">
+
+    <button id="modalClose" class="absolute top-3 right-4 text-white text-lg hover:opacity-80">x</button>
+
+    <div class="flex flex-col items-center text-center space-y-3 mt-6">
+
+      <!-- Centered artwork + title + singer -->
+      <div class="flex flex-col items-center justify-center w-full">
+        <img id="modalImg" src="" class="w-14 h-14 rounded-md object-cover shadow-lg mb-2">
+        <div id="modalTitle" class="font-semibold text-lg text-white">Title</div>
+        <div id="modalSinger" class="text-xs opacity-80 text-white -mt-1">Singer</div>
+      </div>
+
+      <!-- Lyrics Box -->
+      <div id="modalLyricsWrapper" class="w-3/4 mt-3 max-h-[320px] overflow-y-auto no-scroll">
+        <div class="lyrics-box">
+          <div id="modalLyrics" class="leading-relaxed text-sm text-white"></div>
+        </div>
+      </div>
+
+      <!-- Modal Audio UI -->
+      <div id="modalAudioUI" class="w-full mt-3 flex justify-center">
+        <div class="audio-ui-inner">
+          
+          <div class="progress-wrap">
+            <div id="modalProgress" class="progress">
+              <div id="modalProgressFill" class="fill"></div>
+            </div>
+
+            <div class="time-row">
+              <div id="modalCurrent">0:00</div>
+              <div class="controls gap-2 flex">
+                <div class="btn" id="modalPrev">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M11 19V5l-7 7 7 7zm2-14v14l7-7-7-7z"/></svg>
+                </div>
+                <div class="btn" id="modalPlay">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M5 3v18l15-9L5 3z"/></svg>
+                </div>
+                <div class="btn hidden" id="modalPause">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M6 5h4v14H6V5zm8 0h4v14h-4V5z"/></svg>
+                </div>
+                <div class="btn" id="modalNext">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M6 5v14l7-7-7-7zm9 0v14l7-7-7-7z"/></svg>
+                </div>
+              </div>
+              <div id="modalTotal">0:00</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- END AUDIO UI -->
+
+    </div>
+  </div>
+</div>
+
+
+  <!-- Mini Player (Hidden) -->
+  <div id="miniPlayer" class="hidden">
+    <div class="player-left">
+      <img id="playerThumb" src="img/img1.jpg" alt="thumb">
+      <div class="player-info">
+        <div id="playerTitle" class="player-title">Better</div>
+        <div id="playerArtist" class="player-artist">Khalid</div>
+      </div>
+    </div>
+
+    <div class="player-center">
+      <div class="progress-wrap">
+        <div id="progress" class="progress">
+          <div id="progressFill" class="fill"></div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="btn" id="prevBtn"></div>
+        <div class="btn" id="playBtn"></div>
+        <div class="btn hidden" id="pauseBtn"></div>
+        <div class="btn" id="nextBtn"></div>
+      </div>
+    </div>
+
+    <div class="player-right">
+      <input type="range" id="volRange" min="0" max="1" step="0.01">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
